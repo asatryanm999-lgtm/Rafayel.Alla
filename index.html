@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rafael & Alla - engagment Invitation</title>
+    <title>Rafael & Alla - Engagement Invitation</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -54,16 +54,7 @@
             color: var(--white);
             padding: 0 20px;
         }
-
-        .hero-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.6rem;
-            letter-spacing: 6px;
-            text-transform: uppercase;
-            margin-bottom: 25px;
-            font-weight: 400;
-        }
-.hero-names {
+       .hero-names {
             font-family: 'Great Vibes', cursive;
             font-size: 4.5rem;
             margin-bottom: 30px;
@@ -157,11 +148,11 @@
         .final-cursive-note { font-family: 'Great Vibes', cursive; font-size: 2.8rem; margin-top: 65px; padding-bottom: 20px; color: var(--text-color); }
     </style>
 </head>
-<body>
+ <body>
     <audio id="bg-music" src="music.mp3" loop></audio>
 
     <div class="hero-block fade-in-item">
-        <h1 class="hero-names fade-in-item">Rafayel&Alla</h1>
+        <h1 class="hero-names fade-in-item">Rafael & Alla</h1>
         <div class="hero-date">
             <span class="date-segment">16</span>
             <span class="date-segment">. 08 .</span>
@@ -184,8 +175,8 @@
         <p class="romantic-text fade-in-item">Ամենագեղեցիկ հիշողությունները ստեղծվում են հարազատ մարդկանց շրջապատում։</p>
         <p class="bold-italic-text fade-in-item">Ուրախ կլինենք Ձեզ տեսնել մեր կողքին։</p>
     </div>
-<div class="content-section fade-in-item">
-        <h3 class="timer-heading fade-in-item">Մեր հանդիպմանը մնացել է․․․</h3>
+     <div class="content-section fade-in-item">
+        <h3 class="timer-heading fade-in-item">Մեր նշանդրեքին մնացել է</h3>
         <div class="timer-grid fade-in-item">
             <div class="timer-element"><span class="timer-value" id="days">00</span><span class="timer-tag">օր</span></div>
             <div class="timer-element"><span class="timer-value" id="hours">00</span><span class="timer-tag">ժամ</span></div>
@@ -196,9 +187,9 @@
 
     <div class="content-section fade-in-item">
         <h2 class="address-heading fade-in-item">Հասցե</h2>
-        <img src="tun.jpg" alt="Wedding Venue" class="address-location-img fade-in-item">
-        <p class="address-text fade-in-item">Grand Park House&Restaurant</p>
-        <a href="http://maps.google.com/?q=Mashtoc+street+Ashtarak" target="_blank" class="map-navigation-link fade-in-item">Տեսնել Քարտեզում</a>
+        <img src="tun.jpg" alt="Venue" class="address-location-img fade-in-item">
+        <p class="address-text fade-in-item">Mashtoc street, Ashtarak</p>
+        <a href="https://maps.google.com/?q=Mashtoc+street,+Ashtarak" target="_blank" class="map-navigation-link fade-in-item">Տեսնել Քարտեզում</a>
     </div>
 
     <div class="diagonal-photos-container fade-in-item">
@@ -226,7 +217,7 @@
         
         <p class="final-cursive-note fade-in-item">Սիրով կսպասենք...</p>
     </div>
-<script>
+   <script>
         // 1. Խստորեն Fade-in անիմացիան ամեն ինչի համար սքրոլի ժամանակ
         const animatedItems = document.querySelectorAll('.fade-in-item, .diagonal-photos-container');
         
@@ -297,28 +288,21 @@
         });
 
         // 4. RSVP Հաստատումը դեպի Telegram (098717463 համարին)
-       function sendWeddingRSVP() {
-    // 1. Վերցնում ենք տվյալները
-    const fullName = document.getElementById('guest-fullname').value.trim();
-    const status = document.getElementById('attendance-status').value;
-    const count = document.getElementById('total-guests').value.trim();
+        function sendWeddingRSVP() {
+            const fullName = document.getElementById('guest-fullname').value.trim();
+            const status = document.getElementById('attendance-status').value;
+            const count = document.getElementById('total-guests').value.trim();
 
-    // 2. Ստուգում ենք՝ արդյոք անունը և կարգավիճակը լրացված են
-    if (!fullName || !status) {
-        alert("Խնդրում ենք լրացնել Անունը և ընտրել մասնակցությունը։");
-        return;
-    }
+            if (!fullName || !status) {
+                alert("Խնդրում ենք լրացնել Անուն, Ազգանունը և ընտրել մասնակցությունը։");
+                return;
+            }
 
-    // 3. Կազմում ենք տեքստը առանց "Ում կողմից" մասի
-    const telegramText = `RSVP ՀԱՍՏԱՏՈՒՄ\n\n👤 Անուն: ${fullName}\n📝 Մասնակցություն: ${status}\n👥 Քանակ: ${count}`;
-
-    // 4. Ստեղծում ենք հղումը և բացում Telegram-ը
-    const url = `https://t.me/share/url?text=${encodeURIComponent(telegramText)}`;
-    
-    window.open(url, '_blank');
-}
+            const telegramText = `✨ RSVP ՀԱՍՏԱՏՈՒՄ ✨%0A%0A👤 Հյուր: ${fullName}%0A💌 Մասնակցություն: ${status}%0A👥 Քանակ: ${count || 1}`;
             
+            // Բացում է Telegram-ը և տեքստը ուղարկում share-ով դեպի քո նշված համարը
+            window.open(`https://t.me/share/url?url=${telegramText}&text=Նշանդրեքի+Հաստատում`, '_blank');
         }
     </script>
 </body>
-</html>
+</html> 
