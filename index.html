@@ -297,19 +297,25 @@
         });
 
         // 4. RSVP Հաստատումը դեպի Telegram (098717463 համարին)
-        function sendWeddingRSVP() {
-            const fullName = document.getElementById('guest-fullname').value.trim();
-            const status = document.getElementById('attendance-status').value;
-            const count = document.getElementById('total-guests').value.trim();
-            const side = document.getElementById('invitation-side').value.trim();
+       function sendWeddingRSVP() {
+    // 1. Վերցնում ենք տվյալները
+    const fullName = document.getElementById('guest-fullname').value.trim();
+    const status = document.getElementById('attendance-status').value;
+    const count = document.getElementById('total-guests').value.trim();
 
-            if (!fullName || !status) {
-                alert("Խնդրում ենք լրացնել Անուն, Ազգանունը և ընտրել մասնակցությունը։");
-                return;
-            }
-const telegramText = `RSVP ՀԱՍՏԱՏՈՒՄ\n\n Անուն: ${fullName}\n Մասնակցություն: ${status}\n Քանակ: ${count}`;
+    // 2. Ստուգում ենք՝ արդյոք անունը և կարգավիճակը լրացված են
+    if (!fullName || !status) {
+        alert("Խնդրում ենք լրացնել Անունը և ընտրել մասնակցությունը։");
+        return;
+    }
 
-    window.open(`https://t.me/share/url?text=${encodeURIComponent(telegramText)}`, '_blank');
+    // 3. Կազմում ենք տեքստը առանց "Ում կողմից" մասի
+    const telegramText = `RSVP ՀԱՍՏԱՏՈՒՄ\n\n👤 Անուն: ${fullName}\n📝 Մասնակցություն: ${status}\n👥 Քանակ: ${count}`;
+
+    // 4. Ստեղծում ենք հղումը և բացում Telegram-ը
+    const url = `https://t.me/share/url?text=${encodeURIComponent(telegramText)}`;
+    
+    window.open(url, '_blank');
 }
             
         }
