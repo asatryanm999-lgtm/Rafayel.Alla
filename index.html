@@ -307,11 +307,11 @@
                 alert("Խնդրում ենք լրացնել Անուն, Ազգանունը և ընտրել մասնակցությունը։");
                 return;
             }
+const telegramText = `RSVP ՀԱՍՏԱՏՈՒՄ\n\n Անուն: ${fullName}\n Մասնակցություն: ${status}\n Քանակ: ${count}`;
 
-            const telegramText = `✨ RSVP ՀԱՍՏԱՏՈՒՄ ✨%0A%0A👤 Հյուր: ${fullName}%0A💌 Մասնակցություն: ${status}%0A👥 Քանակ: ${count || 1}%0A📌 Ում կողմից: ${side || 'Նշված չէ'}`;
+    window.open(`https://t.me/share/url?text=${encodeURIComponent(telegramText)}`, '_blank');
+}
             
-            // Բացում է Telegram-ը և տեքստը ուղարկում share-ով դեպի քո նշված համարը
-            window.open(`https://t.me/share/url?text=${encodeURIComponent(telegramText)}`, '_blank');
         }
     </script>
 </body>
